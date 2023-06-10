@@ -1,0 +1,144 @@
+#top-nav{
+    height: 60px;
+    width: 100%;
+    background-color: rgb(233, 131, 131);
+    /* margin-top: 30px; */
+    display: flex;
+    justify-items: center;
+    position: relative;
+    border-radius:  20px 20px 0px 0px;
+    justify-content: space-between;
+   
+    
+}
+#logo{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 40px;
+    margin-top: 5px;
+    margin-right:15px ;
+}
+#logo-cam{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-left: 40px; 
+    position: absolute;
+    right: 60px;
+    top: 10px;
+}
+#profile-dp{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    /* border: 2px solid; */
+    margin-right: 10px;
+    margin-top:10px ;
+}
+#parent{
+    width: 500px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 3px 10px 10px gray;
+    border:5px solid rgb(233, 131, 131);
+    margin-top: 25px;
+    padding-bottom: 20px;
+    border-radius: 30px ;
+}
+#heading{
+    margin-top: 7px;
+}
+#name-logo{
+    display: flex
+}
+.rect{
+    height: auto;
+    width: 92%;
+    /* border: 4px solid rgb(233, 131, 131) ; */
+    margin: 15px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 20px rgb(99, 97, 97);
+}
+#file{
+    width: 100%; 
+    border: 2px solid rgb(233, 131, 131);
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    height: 26px; 
+}
+#form{
+    padding: 20px;
+}
+
+.name-name{
+   
+    border: 2px solid rgb(233, 131, 131);
+    /* text-align: center; */
+    font-size: 15px;
+    font-weight: bold;
+   width: 45%;
+    height: 26px; 
+}
+#Au-name{
+    margin-right: 6.1954362390%;
+}
+#descript{
+    width: 100%;
+    height: 26px;
+    font-size: large;
+    font-weight: bold;
+}
+#btn{
+    height: 35px;
+    width: 120px;
+    border-radius: 10px;
+    margin-left: 140px;
+}
+input{
+    border-radius: 5px;
+    border-color:rgb(233, 131, 131);
+}
+#btn{
+    background-color: green;
+    color: aliceblue;
+    font-size: large;
+    border-color: rgb(233, 131, 131);
+    font-weight: bold;
+}
+
+input:focus{
+    border-color: rgb(152, 228, 152);
+    box-shadow: 2px 2px 7px rgb(152, 228, 152) ;
+}
+.LoderSubmit{
+  display: inline-block;
+  background-color: rgb(233, 131, 131);
+  height: 15px;
+  width: 15px;
+  font-size: 1px;
+  padding: 1px;
+  color: white;
+  margin-right: 5px;
+  margin-left: 5px;
+  animation: skew 1s infinite;
+  transform: skew(20deg);
+  animation-direction: alternate;
+  opacity: .7;
+  }
+  
+  /* Safari */
+  @keyframes skew {
+    0% {
+      transform: skewX(20deg);
+    }
+    100% {
+      transform: skewX(-20deg);
+    }
+  }
+  #form-loder{
+    text-align: center;
+  }
+  
