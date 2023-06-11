@@ -15,7 +15,8 @@ const registerSchema = mongoose.Schema({
         require:true
     },
     image:{
-        type:Object
+        type:Object,
+        default:null
     }
 })
 

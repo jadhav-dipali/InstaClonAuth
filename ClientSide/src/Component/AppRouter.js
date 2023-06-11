@@ -6,6 +6,7 @@ import Posts from "./Posts";
 import UserPost from "./UserPost";
 import Register from "./Register";
 import Login from "./Login";
+import ChangeDpForm from "./ChangeDpForm";
 
 
 
@@ -18,10 +19,11 @@ function AppRouter(){
         <Route path="instaclone" element={<InstaClone />} >
            <Route path="posts" element={<Posts/>}/>
            <Route path="AllPost" element={<UserPost/>}/>
-         
+           <Route path="changeDp" element={<ChangeDpForm/>}/>
         </Route>
         <Route path="register" element={<Register/>}/>
         <Route path="login" element={<Login/>}/>
+      
     </Routes>
     </BrowserRouter>
   

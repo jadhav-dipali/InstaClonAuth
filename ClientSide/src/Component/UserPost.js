@@ -9,7 +9,6 @@ function UserPost(){
   
 
 const {user}= useContext(UserContext);
-console.log(user);
     return<>
    
     
