@@ -6,16 +6,22 @@ import dp from "../images/dp.png"
 import navigator from "navigator";
 import { Context, createContext, useEffect, useState } from "react";
 import "../style/InstaClone.css"
+import ChangeDpForm from "./ChangeDpForm";
+
 
 function TopNav(){
    
 const [dpp , setDp] = useState(false);
 const navigate = useNavigate();
-
+const [ data1 , setData] = useState([]);
+const id = localStorage.getItem("user-id")
 useEffect(()=>{
-  fetch("")
+  fetch(`http://localhost:4000/register/${id}`)
+  .then(res=>res.json())
+  .then(data=>setData(data))
 },[])
 
+  const dappppp =  data1.image;
     return<>
      <nav id="top-nav">
         <div id="name-logo">
@@ -24,10 +30,12 @@ useEffect(()=>{
          </div>
         <div>
          <Link to="/instaclone/posts"> <img src={cameraLogo} id='logo-cam'></img></Link>
-         <div><img src={dp} id="profile-dp" onClick={()=>{dpp?setDp(false):setDp(true)}} ></img>
+         <div>
+            {dappppp?<img src={dappppp.url} id="profile-dp" onClick={()=>{dpp?setDp(false):setDp(true)}} ></img>:<img src={dp} id="profile-dp" onClick={()=>{dpp?setDp(false):setDp(true)}} ></img>}
+
          {dpp?<div id="logout-of-thepage">
                <ul>
-                <li>Change Dp</li><br></br>
+                <li onClick={()=>{navigate("/instaclone/changeDp")}}>Change Dp</li><br></br>
                 <li onClick={()=>{
                     localStorage.clear();
                     navigate("/login")

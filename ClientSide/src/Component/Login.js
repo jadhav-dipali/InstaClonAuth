@@ -15,7 +15,6 @@ export default function Login(){
     })
     function submitlogin(e){
        e.preventDefault();
-       console.log(formData);
     if(!formData.email ||!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(formData.email)){
         setErrText("Enter the Valid Email")
         setEmailErr(true)
@@ -36,6 +35,7 @@ export default function Login(){
             toast.success("Login sucessfully")
             localStorage.setItem("user-token" ,data.token)
             localStorage.setItem("user-name" ,data.name)
+            localStorage.setItem("user-id" ,data.id)
             setFormData({
                 email:"",
                 password:""
