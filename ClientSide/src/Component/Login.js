@@ -2,9 +2,11 @@ import React,{useState} from "react";
 import "../style/register.css"
 import {useNavigate} from "react-router-dom"
 import { ToastContainer,toast } from "react-toastify";
+import "../style/chageDp.css"
 
 export default function Login(){
     const navigate = useNavigate()
+    const [loder , setLoder] = useState(false);
     const [err , setErr] =  useState(null)
     const[errtext , setErrText]= useState("")
     const [emailErr, setEmailErr] = useState(false);
@@ -15,6 +17,7 @@ export default function Login(){
     })
     function submitlogin(e){
        e.preventDefault();
+   
     if(!formData.email ||!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(formData.email)){
         setErrText("Enter the Valid Email")
         setEmailErr(true)
@@ -22,6 +25,7 @@ export default function Login(){
        setErrText("Password length at least 6 latter")
        setPassErr(true)
     }else{
+        setLoder(true)
         fetch("http://localhost:4000/login",{
             method:"POST",
             headers:{
@@ -32,6 +36,7 @@ export default function Login(){
        ).then(res=>res.json())
        .then(data=>{
         if(data.status==="Login sucessfully"){
+            setLoder(false)
             toast.success("Login sucessfully")
             localStorage.setItem("user-token" ,data.token)
             localStorage.setItem("user-name" ,data.name)
@@ -40,8 +45,9 @@ export default function Login(){
                 email:"",
                 password:""
                })
-            navigate("/instaclone/allpost")
+           setTimeout(()=>navigate("/instaclone/allpost") , 3000) 
        }else if(data.message==="Please Enater Valid Details"){
+        setLoder(false)
              setErr("User Details Not Match")
        }
     })
@@ -68,10 +74,10 @@ export default function Login(){
              setErr(null)
              }} value={formData.password}></input><br></br>
             {passErr&& errtext&&<div id="errText">{errtext}</div>}
-            <div id="btn-container-signup"><button id="signup-btn">Submit</button></div>
+            <div id="btn-container-signup"><button id="signup-btn">{loder?<div id="loderabc"></div>:"Login"}</button></div>
         </form>
         <ToastContainer
-          position="top-center"
+          position="top-right"
           autoClose={1500}
           hideProgressBar={false}
           newestOnTop={false}

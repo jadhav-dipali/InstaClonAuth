@@ -91,12 +91,6 @@
     font-size: large;
     font-weight: bold;
 }
-#btn{
-    height: 35px;
-    width: 120px;
-    border-radius: 10px;
-    margin-left: 140px;
-}
 input{
     border-radius: 5px;
     border-color:rgb(233, 131, 131);
@@ -107,38 +101,16 @@ input{
     color: aliceblue;
     font-size: large;
     font-weight: bold;
+    height: 40px;
+    width: 120px;
+    border-radius: 10px;
+    margin-left: 140px;
+    padding-bottom: 3px;
 }
 
 input:focus{
     border-color: rgb(152, 228, 152);
     box-shadow: 2px 2px 7px rgb(152, 228, 152) ;
 }
-.LoderSubmit{
-  display: inline-block;
-  background-color: rgb(233, 131, 131);
-  height: 15px;
-  width: 15px;
-  font-size: 1px;
-  padding: 1px;
-  color: white;
-  margin-right: 5px;
-  margin-left: 5px;
-  animation: skew 1s infinite;
-  transform: skew(20deg);
-  animation-direction: alternate;
-  opacity: .7;
-  }
-  
-  /* Safari */
-  @keyframes skew {
-    0% {
-      transform: skewX(20deg);
-    }
-    100% {
-      transform: skewX(-20deg);
-    }
-  }
-  #form-loder{
-    text-align: center;
-  }
+
   

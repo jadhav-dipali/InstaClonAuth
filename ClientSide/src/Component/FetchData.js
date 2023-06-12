@@ -11,7 +11,7 @@ return url;
 function FeatchData(){
 return fetch(`${Data()}/post`,{
     headers:{
-        authorization:userToken
+        Authorization:userToken
        }
 })
 .then(res=>res.json())
@@ -22,7 +22,7 @@ function AddData(data){
     return fetch(`${Data()}/post`,{
         method:"POST",
        headers:{
-        authorization:userToken
+        Authorization:userToken
        },
         body:data
       

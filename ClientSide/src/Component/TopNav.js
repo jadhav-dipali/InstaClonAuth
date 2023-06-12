@@ -25,7 +25,7 @@ useEffect(()=>{
     return<>
      <nav id="top-nav">
         <div id="name-logo">
-        <img src={instaLogo} id='logo'></img>
+        <img src={instaLogo} id='logo' onClick={()=>navigate("/instaclone/allpost")}></img>
          <h1 id='heading'>InstaClone</h1>
          </div>
         <div>
@@ -35,7 +35,7 @@ useEffect(()=>{
 
          {dpp?<div id="logout-of-thepage">
                <ul>
-                <li onClick={()=>{navigate("/instaclone/changeDp")}}>Change Dp</li><br></br>
+                <li onClick={()=>{navigate("/instaclone/changeDp"); setDp(false)}}>Change Dp</li><br></br>
                 <li onClick={()=>{
                     localStorage.clear();
                     navigate("/login")

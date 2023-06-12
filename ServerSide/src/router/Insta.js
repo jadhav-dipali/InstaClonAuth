@@ -50,14 +50,17 @@ const middleware = upload.single("file");
 router.post("/post",middleware,async(req,res)=>{
     try{
       if(req.headers.authorization){
-         let userVar = await jwt.verify(req.headers.authorization , SECRATE_KEY)
-         const data = new Posts({file:{
-          url:req.file.path,
-          imageId:req.file.filename
-         },userId:userVar._id,...req.body});
-         const createData = await data.save();
-         res.json(createData);
-        }else{
+         let userVar = await jwt.verify(req.headers.authorization , SECRATE_KEY);
+         if(userVar){
+          const data = new Posts({file:{
+            url:req.file.path,
+            imageId:req.file.filename
+           },userId:userVar._id,...req.body});
+           const createData = await data.save();
+           res.status(201).json(createData);
+          }
+         }
+         else{
           res.status(401).json({message:"User Not Othorised"})
         }
       }catch(err){
