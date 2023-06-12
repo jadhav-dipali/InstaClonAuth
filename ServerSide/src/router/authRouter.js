@@ -35,10 +35,15 @@ const middleware = upload.single("image");
 
 router.post("/register", async (req, res) => {
     try {
-        const strongpass = await bcrypt.hash(req.body.password, 10);
-        const data = new Register({ password: strongpass, name: req.body.name, email: req.body.email });
-        const createData = await data.save();
-        res.status(201).send({ status: "sucusess", data: createData });
+        const user  = await Register.findOne({email:req.body.email})
+        if(user){
+            res.json({status:"fail" , message:"user already present"})
+        }else{
+            const strongpass = await bcrypt.hash(req.body.password, 10);
+            const data = new Register({ password: strongpass, name: req.body.name, email: req.body.email });
+            const createData = await data.save();
+            res.status(201).send({ status: "sucusess", data: createData });
+        }
     } catch (error) {
         res.status(400).json({ message: error.message })
     }
@@ -84,7 +89,7 @@ router.post("/login", async (req, res) => {
 
             if (matchpass) {
                 const token = await jwt.sign({ _id: user._id }, SECREATE_KEY);
-                res.status(201).json({ status: "Login sucessfully", token: token, name: user.name, id: user._id });
+                res.status(201).json({ status: "Login sucessfully", token: token, name: user.name, id: user._id});
 
             } else {
                 res.status(401).json({ message: "Please Enater Valid Details" })

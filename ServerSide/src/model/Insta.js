@@ -27,6 +27,10 @@ const InstaSchema = mongoose.Schema({
     },
     userId:{
         type:String
+    },
+    userDp:{
+        type:String,
+        
     }
 })
 

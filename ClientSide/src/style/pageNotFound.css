@@ -1,0 +1,22 @@
+#message-page-not-found{
+    text-align: center;
+    margin-top: 100px;
+    color:  rgb(233, 131, 131);
+    font-size: 55px;
+    text-shadow: 3px 3px 5px gray;
+}
+#sujessiongothere{
+    text-align: center;
+    color: green;
+    font-size: 35px;
+}
+#go-to-homr-page{
+    height: 40px;
+    width: 120px;
+    font-size: large;
+    font-weight: bold;
+    color: aliceblue;
+    background-color:rgb(233, 131, 131) ;
+    border-color: rgb(233, 131, 131);
+    border-radius: 5px;
+}

@@ -6,13 +6,9 @@ import Cont from "../context/ContextPost";
 import { UserContext } from "../context/ContextPost";
 
 function UserPost(){
-  
-
-const {user}= useContext(UserContext);
+  const {user}= useContext(UserContext);
     return<>
-   
-    
-   {user.map((d,ind)=><div id="rect" key={ind}>
+     {user.map((d,ind)=><div id="rect" key={ind}>
     <div className="Child1">
     <div>
     <h4 id="name">{d.author}</h4>
