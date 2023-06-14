@@ -1,6 +1,6 @@
 import { json } from "react-router-dom";
 
- let url = "http://localhost:4000";
+ let url = "https://instaclone-auth-backend.onrender.com";
  const userToken = localStorage.getItem("user-token")
 
 function Data(){

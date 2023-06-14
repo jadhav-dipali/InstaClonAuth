@@ -18,7 +18,7 @@ const navigate = useNavigate();
 const [ data1 , setData] = useState([]);
 const id = localStorage.getItem("user-id")
 useEffect(()=>{
-  fetch(`http://localhost:4000/register/${id}`)
+  fetch(`https://instaclone-auth-backend.onrender.com/register/${id}`)
   .then(res=>res.json())
   .then(data=>setData(data))
 },[])
