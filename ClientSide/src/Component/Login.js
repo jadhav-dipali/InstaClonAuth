@@ -26,7 +26,7 @@ export default function Login(){
        setPassErr(true)
     }else{
         setLoder(true)
-        fetch("http://localhost:4000/login",{
+        fetch("https://instaclone-auth-backend.onrender.com/login",{
             method:"POST",
             headers:{
              "content-type":"application/json"

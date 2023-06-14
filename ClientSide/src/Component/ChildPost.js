@@ -10,14 +10,14 @@ export default function ChildPost({d, ind}){
     const {setUser} = useContext(UserContext);
     const [imgdp , setImg] = useState("")
     useEffect(()=>{
-      fetch(`http://localhost:4000/register/${d.userId}`)
+      fetch(`https://instaclone-auth-backend.onrender.com/register/${d.userId}`)
       .then(res=>res.json())
       .then(data=>setImg(data.image.url))
     },[]);
 
     function like(id){
         console.log(id)
- fetch(`http://localhost:4000/post/${id}`, {
+ fetch(`https://instaclone-auth-backend.onrender.com/post/${id}`, {
             method:"PUT",
             headers:{
                 Authorization:userToken,

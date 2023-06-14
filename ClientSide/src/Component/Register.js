@@ -39,7 +39,7 @@ export default function Register(){
         setConfirmPassErr(true)
      }else{
       setLoder(true)
-      fetch("http://localhost:4000/register",{
+      fetch("https://instaclone-auth-backend.onrender.com",{
            method:"POST",
            headers:{
             "content-type":"application/json"

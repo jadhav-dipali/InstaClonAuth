@@ -20,7 +20,7 @@ export default function ChangeDpForm(){
         e.preventDefault();
         setLoder(true);
         let formdata = new FormData(e.target)
-        fetch(`http://localhost:4000/register/${id}` , {
+        fetch(`https://instaclone-auth-backend.onrender.com/register/${id}` , {
             method:"PUT",
             body:formdata
         }).then(res=>res.json())
