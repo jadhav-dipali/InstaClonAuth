@@ -80,3 +80,6 @@
     }
     
 }
+li:hover{
+    cursor: pointer;
+}

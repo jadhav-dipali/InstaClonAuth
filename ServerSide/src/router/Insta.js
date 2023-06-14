@@ -7,6 +7,8 @@ const { CloudinaryStorage } = require('multer-storage-cloudinary');
  const env = require("dotenv").config();
 const SECRATE_KEY = process.env.SECRATE_KEY
 const jwt = require("jsonwebtoken");
+const Register = require("../model/register")
+
 
 cloudinary.config({
   cloud_name:process.env.CLOUD_NAME,
@@ -67,7 +69,29 @@ router.post("/post",middleware,async(req,res)=>{
         res.status(400).json({message:"post is not created"})
        }
    
+});
+
+router.put("/post/:id" , async(req, res)=>{
+  try{
+    if(req.headers.authorization){
+      let userVar = await jwt.verify(req.headers.authorization , SECRATE_KEY);
+      const _id = req.params.id;
+      const post = await Posts.findById(_id);
+      const foundId = post.likes.find(ele=>ele===userVar._id)
+      if(!foundId){
+        const updateLike = await Posts.findByIdAndUpdate(_id , {$push:{likes:userVar._id}} ,{new:true});
+        res.status(201).json({status:"Success" , message:"like add", update:updateLike})
+      }else{
+        const updateLike = await Posts.findByIdAndUpdate(_id , {$pull:{likes:userVar._id}} ,{new:true});
+        res.status(201).json({status:"Success" , message:"like remove", update:updateLike})
+      }
+    }
+  }catch(err){
+    res.status(400).json({status:"fail" , message:err.message})
+  }
 })
+
+
 
 
 

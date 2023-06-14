@@ -68,13 +68,17 @@ router.put("/register/:id", async (req, res) => {
                 return res.status(400).json({ message: err.message })
             }
             const _id = req.params.id;
+            const userdata = await Register.findById(_id);
+            if(userdata.image!==null){
+              await  cloudinary.v2.uploader.destroy(userdata.image.imageId)
+            }
             const updatedData = await Register.findByIdAndUpdate(_id, {
                 image: {
                     url: req.file.path,
                     imageId: req.file.filename
                 }
             }, { new: true })
-            res.json({ status: "dp update sucess", ...updatedData })
+            res.json({ status: "dp update sucess", data:updatedData })
         })
     } catch (error) {
         res.status(400).json({ message: error.message })

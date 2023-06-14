@@ -8,6 +8,7 @@ export const UserContext =createContext() ;
 
 export default function ContextPost({children}){
     let [user, setUser] = useState([])
+    let [dpLocal , setdpLocal] = useState("")
 
     useEffect( ()=>{
         FeatchData()
@@ -15,7 +16,7 @@ export default function ContextPost({children}){
     },[]
 );
     return<>
-     <UserContext.Provider value={{user,setUser}}>
+     <UserContext.Provider value={{user,setUser, dpLocal, setdpLocal}}>
         {children}
      </UserContext.Provider>
     </>

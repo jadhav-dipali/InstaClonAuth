@@ -49,6 +49,9 @@ export default function Login(){
        }else if(data.message==="Please Enater Valid Details"){
         setLoder(false)
              setErr("User Details Not Match")
+       }else{
+        setLoder(false)
+        setErr("User Details Not Match")
        }
     })
        

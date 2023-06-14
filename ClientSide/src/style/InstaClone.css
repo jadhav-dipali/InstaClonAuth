@@ -18,6 +18,14 @@
     margin-left: 40px;
     margin-top: 5px;
     margin-right:15px ;
+    
+}
+#logo:hover{
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 5px gray;
 }
 #logo-cam{
     height: 35px;
@@ -28,13 +36,25 @@
     right: 60px;
     top: 10px;
 }
+#logo-cam:hover {
+    height: 43px;
+    width: 43px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 10px black;
+    
+}
 #profile-dp{
     height: 35px;
     width: 35px;
     border-radius: 50%;
-    /* border: 2px solid; */
     margin-right: 10px;
     margin-top:10px ;
+}
+#profile-dp:hover{
+    height: 43px;
+    width: 43px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 10px black;
 }
 #parent{
     width: 500px;
@@ -111,6 +131,9 @@ input{
 input:focus{
     border-color: rgb(152, 228, 152);
     box-shadow: 2px 2px 7px rgb(152, 228, 152) ;
+    outline: none;
 }
+#location-for-the-add-the-post{
 
+}
   

@@ -22,8 +22,7 @@ const InstaSchema = mongoose.Schema({
         default:(new Date().toLocaleDateString())
     },
     likes:{
-      type:Number,
-      default:0  
+      type:[String], 
     },
     userId:{
         type:String
