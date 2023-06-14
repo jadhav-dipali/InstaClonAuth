@@ -7,6 +7,8 @@ import navigator from "navigator";
 import { Context, createContext, useEffect, useState } from "react";
 import "../style/InstaClone.css"
 import ChangeDpForm from "./ChangeDpForm";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function TopNav(){
@@ -38,7 +40,9 @@ useEffect(()=>{
                 <li onClick={()=>{navigate("/instaclone/changeDp"); setDp(false)}}>Change Dp</li><br></br>
                 <li onClick={()=>{
                     localStorage.clear();
-                    navigate("/login")
+                    toast.success("LogOut SucessFully");
+                    setTimeout(()=>navigate("/login"),2000)
+                    
                 }}>Log-Out</li>
                </ul>
          </div>:null}
@@ -47,6 +51,16 @@ useEffect(()=>{
 
          </div>
     </nav>
+    <ToastContainer
+               position="top-right"
+               autoClose={1500}
+               hideProgressBar={false}
+               newestOnTop={false}
+               closeOnClick
+               rtl={false}
+               pauseOnFocusLoss
+               theme="light"
+      />
     </>
 }
 

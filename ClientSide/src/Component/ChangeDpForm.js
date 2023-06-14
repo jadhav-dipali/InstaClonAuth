@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../style/chageDp.css"
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../context/ContextPost";
 
 
 export default function ChangeDpForm(){
-    const id = localStorage.getItem("user-id")
+    const id = localStorage.getItem("user-id");
+    const {setdpLocal} = useContext(UserContext)
     const [ data , setData] = useState({
         dp:""
     });
@@ -24,6 +26,7 @@ export default function ChangeDpForm(){
         }).then(res=>res.json())
         .then(data=>{
           if(data.status="dp update sucess"){
+            setdpLocal(data.data.image.url)
              setData({
               dp:""
              });
