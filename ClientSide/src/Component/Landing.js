@@ -6,8 +6,7 @@ function Landing(){
    <h1 id="name-of-home-page">InstaClone</h1>
    <h3 id="mes">See Your Friends Post please Sign-Up here.</h3>
    <h4 id="login-register-lannding-page"><Link to="/login">Log-In </Link> or <Link to="/register"> Sign-Up</Link> </h4>
-
-    </div>
+  </div>
       
        
     </>
