@@ -49,6 +49,7 @@ function Posts(){
         <form id='form' onSubmit={post}>
           <input type="file" placeholder='choose the file' id='file'name='file'  onChange={(e)=>{setData({...data, file:e.target.files[0]});   setFile(URL.createObjectURL(e.target.files[0]));}} required accept='image/png,image/jpg' ></input><br/><br/>
           {file1&&<div id="preview-dp-container"><img src={file1} id="preview-the-dp"></img></div>}
+          
           <input type="text" placeholder='Author' className='name-name' id='Au-name'  name='author' onChange={(e)=>{setData({...data, author:e.target.value})}} value={data.author}  required></input>
           <input type="text" placeholder='Location'className='name-name' id='location-for-the-add-the-post'  name="location"  onChange={(e)=>{setData({...data, location:e.target.value})}} value={data.location}  required></input><br/><br></br>
           <input type="text" placeholder="Description" id="descript" name='description'  onChange={(e)=>{setData({...data, description:e.target.value})}} value={data.description} required></input><br/><br/>

@@ -54,7 +54,7 @@ router.post("/post",middleware,async(req,res)=>{
       if(req.headers.authorization){
          let userVar = await jwt.verify(req.headers.authorization , SECRATE_KEY);
          if(userVar){
-          const data = new Posts({file:{
+           const data = new Posts({file:{
             url:req.file.path,
             imageId:req.file.filename
            },userId:userVar._id,...req.body});
